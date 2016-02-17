@@ -59,4 +59,22 @@ describe('reducer', () => {
     }));
   });
 
+  it('can be used with reducer', () => {
+    const actions = [
+      {type: 'SET_ENTRIES', entries: ['Trainspotting', '28 Days Later']},
+      {type: 'NEXT'},
+      {type: 'VOTE', entries: 'Trainspotting', clientId: 'voter1']},
+      {type: 'VOTE', entries: '28 Days Later', clientId: 'voter2']},
+      {type: 'VOTE', entries: 'Trainspotting', clientId: 'voter3']},
+      {type: 'NEXT'}
+    ];
+
+    const finalState = actions.reduce(reducer, Map());
+
+    expect(finalState).to.equal(fromJS({
+      winner: 'Trainspotting',
+      initialEntries: ['Trainspotting', '28 Days Later']
+    }));
+  });
+
 });
