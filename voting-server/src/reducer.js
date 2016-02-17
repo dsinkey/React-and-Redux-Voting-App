@@ -5,5 +5,8 @@ export default function reducer(state, action){
     case 'SET_ENTRIES':
       return setEntries(state, action.entries);
       break;
+    case 'NEXT':
+      return next(state);
+      break;
   }
 }
