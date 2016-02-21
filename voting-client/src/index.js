@@ -5,5 +5,5 @@ import Voting from './components/Voting';
 const pair = ['Trainspotting', '28 Days Later'];
 
 ReactDOM.reder(
-  <Voting pair={pair} />, document.getElementById('app')
+  <Voting pair={pair} winner="Trainspotting" />, document.getElementById('app')
 );
