@@ -36,4 +36,15 @@ describe('Results', () => {
     expect(entires.length).to.equal(2);
   });
 
+  it("renders the winner when there is only one", () => {
+    const component = renderIntoDocument(
+      <Results winner="Trainspotting" pair={["Trainspotting", "28 Days Later"]} tally={Map()}/>
+    );
+
+    const winner = React.findDOMNode(component.refs.winner);
+    expect(winner).to.be.ok;
+    expect(winner.textContent).to.contain('Trainspotting');
+
+  });
+
 });
