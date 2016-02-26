@@ -23,7 +23,8 @@
     "react": "^0.14.0",
     "redux": "^2.0.0",
     "react-redux": "^3.1.0",
-    "react-router": "1.0.0-rc3"
+    "react-router": "1.0.0-rc3",
+    "socket.io-client": "1.4.5"
     },
   "babel": {
     "presets": [
