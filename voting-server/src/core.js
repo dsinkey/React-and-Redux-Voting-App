@@ -17,10 +17,14 @@ export function next(state) {
   }
 }
 
-export function vote(state, entry) {
-  return state.updateIn({
-    ['vote', 'tally', entry], 0, tally => tally + 1
-  });
+export function vote(voteState, entry) {
+  if(voteState.get('pair').inclues(entry)){
+    return voteState.updateIn(
+      ['tally', entry], 0, tally => tally +1;
+    );
+  } else {
+    return voteState;
+  }
 }
 
 function getWinners(vote){
