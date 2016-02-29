@@ -149,6 +149,20 @@ describe('application logic', () => {
 
   });
 
-  
+  it('ingores the vote if for an invalid entry', () => {
+      expect(
+        vote(Map({
+          round: 1,
+          pair: List.of('Trainspotting', '28 Days Later')
+        }), 'Sunshine')
+      ).to.equal(
+         Map({
+          round: 1,
+          pair: List.of('Trainspotting', '28 Days Later')
+        })
+      );
+    });
+
+  });
 
 });
